@@ -4,6 +4,8 @@ A drop-in [SUWSF](https://github.com/PhantomGamers/SUWSF) configuration for Well
 
 Keeps title artwork proportional, extends loading/fade overlays across the display, and preserves the gameplay image behind the pause menu.
 
+![Well Dweller ultrawide gameplay at 5120×2160](https://raw.githubusercontent.com/ollieatkinson/well-dweller-ultrawide/trunk/assets/gameplay.png)
+
 ## Install
 
 1. Close the game. If you used the old executable patch, restore your original executable first using Steam's **Verify integrity of game files**.
