@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(WellDwellerUltrawide VERSION 1.0.0 LANGUAGES NONE)
+project(WellDwellerUltrawide VERSION 1.1.0 LANGUAGES NONE)
 
 find_program(ASSEMBLER as REQUIRED)
 find_program(LINKER ld REQUIRED)
@@ -7,8 +7,8 @@ find_program(OBJCOPY objcopy REQUIRED)
 
 include(FetchContent)
 FetchContent_Declare(suwsf
-    URL https://github.com/PhantomGamers/SUWSF/releases/download/2.3.0/SUWSF-x64.zip
-    URL_HASH SHA256=2f0831cba476f014819282e92b870156dbf964c8cc6d6412cd68040bee1612a0
+    URL https://github.com/ollieatkinson/SUWSF/releases/download/v2.3.0-guard.3/SUWSF-x64.zip
+    URL_HASH SHA256=28f3f4ef56c4cbddd0ad1ea81d24de9754389c5debbbfb255f0114d8afe23283
     TLS_VERIFY TRUE
 )
 FetchContent_Declare(asi_loader

@@ -46,4 +46,4 @@ jobs:
         run: >-
           gh release create "$RELEASE_TAG" dist/*.zip dist/*.sha256
           --verify-tag --title "$RELEASE_TAG — SUWSF ultrawide"
-          --notes 'Extract beside WellDweller.exe and select 3440×1440 or 5120×2160. Restore the original executable first if you used the old executable patch. Proton: WINEDLLOVERRIDES="version=n,b" %command%. Remove version.dll, SUWSF.asi and SUWSF.ini to uninstall. Targets Steam build 25633433. Original game files and saves are unchanged.'
+          --notes 'Extract beside WellDweller.exe and select 3440×1440 or 5120×2160. When updating, replace all bundled files together. Restore the original executable first if you used the old executable patch. Proton: WINEDLLOVERRIDES="version=n,b" %command%. Bundles SUWSF v2.3.0-guard.3 with executable SHA-256 verification and atomic validation of every patch pattern before any writes. Incompatible versions or configurations display a warning and continue without the fixes; see SUWSF.log. Remove version.dll, SUWSF.asi, SUWSF.ini and the WellDwellerUltrawide documentation folder to uninstall. Targets Steam build 25633433. Original game files and saves are unchanged.'

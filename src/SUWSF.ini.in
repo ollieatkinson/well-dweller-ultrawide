@@ -4,6 +4,12 @@
 [UserSettings]
 Resolution="auto"
 Enabled=true
+Atomic=true
+
+; Require the supported executable before validating or applying any patches.
+[Compatibility]
+Module="auto"
+SHA256="dabebd9145ad005b2fde2d06d8c018fc58520f156900ad48f4a8dea6aa625cc2"
 
 ; Initialize state and code before enabling the game hooks.
 [Patch:00State0]
@@ -12,6 +18,7 @@ Offset=14087368
 Value="@State0@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 [Patch:00Hooks0]
 Pattern="48 8B 05 19 19 7E 00 48 83 F8 0A 72 CD 48 83 C4 28 C3 CC CC 48 8D 0D 3D 7C D3 00 E9 9C 7D B2 FF"
@@ -19,6 +26,7 @@ Offset=40
 Value="@Hooks0@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 [Patch:00Hooks1]
 Pattern="48 8B 05 19 19 7E 00 48 83 F8 0A 72 CD 48 83 C4 28 C3 CC CC 48 8D 0D 3D 7C D3 00 E9 9C 7D B2 FF"
@@ -26,6 +34,7 @@ Offset=552
 Value="@Hooks1@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 [Patch:00Hooks2]
 Pattern="48 8B 05 19 19 7E 00 48 83 F8 0A 72 CD 48 83 C4 28 C3 CC CC 48 8D 0D 3D 7C D3 00 E9 9C 7D B2 FF"
@@ -33,6 +42,7 @@ Offset=1064
 Value="@Hooks2@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe jump to aspect hook
 [Patch:10CameraProjection]
@@ -41,6 +51,7 @@ Offset=0
 Value="@CameraProjection@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe jump to aspect hook
 [Patch:10InitializeAspect]
@@ -49,6 +60,7 @@ Offset=0
 Value="@InitializeAspect@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe jump to aspect hook
 [Patch:10CenterGUI]
@@ -57,6 +69,7 @@ Offset=0
 Value="@CenterGUI@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe jump to aspect hook
 [Patch:10CameraStepWidth]
@@ -65,6 +78,7 @@ Offset=0
 Value="@CameraStepWidth@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10ViewportWidth]
@@ -73,6 +87,7 @@ Offset=0
 Value="@ViewportWidth@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Read isolated aspect-dependent constant
 [Patch:10CameraClampWidth]
@@ -81,6 +96,7 @@ Offset=0
 Value="@CameraClampWidth@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Read isolated aspect-dependent constant
 [Patch:10CameraViewWidth]
@@ -89,6 +105,7 @@ Offset=0
 Value="@CameraViewWidth@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10FullscreenOverlay1]
@@ -97,6 +114,7 @@ Offset=0
 Value="@FullscreenOverlay1@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10FullscreenOverlay2]
@@ -105,6 +123,7 @@ Offset=0
 Value="@FullscreenOverlay2@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10FullscreenOverlay3]
@@ -113,6 +132,7 @@ Offset=0
 Value="@FullscreenOverlay3@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10NormalMaskTargetGUI]
@@ -121,6 +141,7 @@ Offset=0
 Value="@NormalMaskTargetGUI@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10NormalMaskTargetWorld]
@@ -129,6 +150,7 @@ Offset=0
 Value="@NormalMaskTargetWorld@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10UnderwaterMaskTargetGUI]
@@ -137,6 +159,7 @@ Offset=0
 Value="@UnderwaterMaskTargetGUI@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10UnderwaterMaskTargetWorld]
@@ -145,6 +168,7 @@ Offset=0
 Value="@UnderwaterMaskTargetWorld@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite01]
@@ -153,6 +177,7 @@ Offset=0
 Value="@LightingSprite01@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite02]
@@ -161,6 +186,7 @@ Offset=0
 Value="@LightingSprite02@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite03]
@@ -169,6 +195,7 @@ Offset=0
 Value="@LightingSprite03@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite04]
@@ -177,6 +204,7 @@ Offset=0
 Value="@LightingSprite04@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite05]
@@ -185,6 +213,7 @@ Offset=0
 Value="@LightingSprite05@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite06]
@@ -193,6 +222,7 @@ Offset=0
 Value="@LightingSprite06@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite07]
@@ -201,6 +231,7 @@ Offset=0
 Value="@LightingSprite07@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite08]
@@ -209,6 +240,7 @@ Offset=0
 Value="@LightingSprite08@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite09]
@@ -217,6 +249,7 @@ Offset=0
 Value="@LightingSprite09@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite10]
@@ -225,6 +258,7 @@ Offset=0
 Value="@LightingSprite10@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingSprite11]
@@ -233,6 +267,7 @@ Offset=0
 Value="@LightingSprite11@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingComposite01]
@@ -241,6 +276,7 @@ Offset=0
 Value="@LightingComposite01@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingComposite02]
@@ -249,6 +285,7 @@ Offset=0
 Value="@LightingComposite02@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingComposite03]
@@ -257,6 +294,7 @@ Offset=0
 Value="@LightingComposite03@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LightingComposite04]
@@ -265,6 +303,7 @@ Offset=0
 Value="@LightingComposite04@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; ASLR-safe call to aspect hook
 [Patch:10LowHealthOverlay]
@@ -273,6 +312,7 @@ Offset=0
 Value="@LowHealthOverlay@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Recognize saved 5120x2160 as preset 12 instead of default preset 7
 [Patch:10SavedResolutionLookup]
@@ -281,6 +321,7 @@ Offset=0
 Value="00 14 00 00"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Read isolated aspect-dependent constant
 [Patch:10Preset3440Arguments]
@@ -289,6 +330,7 @@ Offset=0
 Value="@Preset3440Arguments@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Preset 9 output width
 [Patch:10Preset3440Output]
@@ -297,6 +339,7 @@ Offset=0
 Value="00 00 00 00 00 E0 AA 40"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Preset 9 label
 [Patch:10Preset3440Label]
@@ -305,6 +348,7 @@ Offset=0
 Value="33 34 34 30 78 31 34 34 30"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Highest preset output width
 [Patch:10Preset5120Output]
@@ -313,6 +357,7 @@ Offset=0
 Value="00 00 00 00 00 00 B4 40"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Highest preset window width; isolated RValue
 [Patch:10Preset5120Arguments]
@@ -321,6 +366,7 @@ Offset=0
 Value="00 00 00 00 00 00 B4 40"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Highest preset vertical scale
 [Patch:10Preset5120Scale]
@@ -329,6 +375,7 @@ Offset=0
 Value="00 00 00 00 00 00 F0 3F"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Highest preset label
 [Patch:10Preset5120Label]
@@ -337,6 +384,7 @@ Offset=0
 Value="35 31 32 30 78 32 31 36 30"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 
 ; Keep the captured pause background at its original screen position and proportions.
@@ -346,6 +394,7 @@ Offset=0
 Value="@PauseScreenshot@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Cover the full display while keeping menu content centered.
 [Patch:10LoadingFade]
@@ -354,6 +403,7 @@ Offset=0
 Value="@LoadingFade@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Cover the full display while keeping menu content centered.
 [Patch:10MenuFade]
@@ -362,6 +412,7 @@ Offset=0
 Value="@MenuFade@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
 
 ; Preserve proportions in title/loading rooms without gameplay cameras.
 [Patch:10RoomProjection]
@@ -370,3 +421,4 @@ Offset=0
 Value="@RoomProjection@"
 ValueType="byte"
 Match="1"
+ExpectedMatches=1
